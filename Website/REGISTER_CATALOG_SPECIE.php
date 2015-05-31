@@ -9,6 +9,7 @@
 			echo "-1"; 
 			return false; 
 		}    
+			echo "hola"; 
 			$new_name = $_POST['new_name'];
 			$gender = $_POST['Gender'];  
 			$size = $_POST['Size']; 
@@ -17,7 +18,7 @@
 			$color = $_POST['Color']; 
 			$offspring = $_POST['Offspring'];  
 			$science = $_POST['scientific_name'];  
-			$sqlVariableUser = 'SELECT insert_species(?, ?, ?, ?, ?, ?, ?, ?);'; 
+			 $sqlVariableUser = 'SELECT insert_species(?, ?, ?, ?, ?, ?, ?, ?);'; 
 			 
 			if(!$stmt = $conn->prepare($sqlVariableUser)){
 				exit($conn->error);

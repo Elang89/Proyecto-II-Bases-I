@@ -243,7 +243,7 @@
 		}  
 		
 		else if(selectedOption == "Species"){  
-			window.location = "REGISTER_CATALOG_SPECIE.php"; 
+			window.location = "register-catalog-specie.php"; 
 		}
 		
 		else{
