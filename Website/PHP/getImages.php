@@ -37,14 +37,11 @@
 	while ($row = $result->fetch_assoc()){
 		$finalResult = $finalResult.'<div class="col-lg-4 col-sm-6">
 												<div class="properties">
-													<form action="user-detail.php" method="POST">
-														<h5>'.$row['Image_Name'].'</h5>
-														<h5>'.$row['Image_Location'].'</h5>
-														<div class="image-holder"><img src="'.$row['Image'].'"class="img-responsive" alt="properties"/></div>
-														<input class="form-control" type="text" style="display: none" readonly name="p_id" value="'.$row['User_Id'].'"/>
-														<input class="form-control" type="text" style="display: none" readonly name="username" value="'.$row['Image'].'"/>
-														<input type="submit" class="btn btn-primary" value="View Details"/>
-													</form>
+													<h5>'.$row['Image_Name'].'</h5>
+													<h5>'.$row['Image_Location'].'</h5>
+													<div class="image-holder"><img src="'.$row['Image'].'"class="img-responsive" alt="properties"/></div>
+													<input class="form-control" type="text" style="display: none" readonly name="p_id" value="'.$row['User_Id'].'"/>
+													<input class="form-control" type="text" style="display: none" readonly name="username" value="'.$row['Image'].'"/>
 												</div>
 										   </div>';
 	}

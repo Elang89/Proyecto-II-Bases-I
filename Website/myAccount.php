@@ -110,7 +110,21 @@
 			<div class="col-lg-6 col-sm-6">
 				<div class="spacer"><h4><span class="glyphicon glyphicon-th"></span>Images</h4>
 					<select id="species" class="form-control" name="species selection">
-						<option disable selected> Select A Species</option>
+						<option value="-1"> Select A Species</option>
+						<?php  
+							$conn = new mysqli('localhost','DBadmin','dbadmin','BirdDatabase');
+					
+							if ($conn->connect_error) {
+								die("Connection failed: " . $conn->connect_error); 
+								echo "-1"; 
+								return false; 
+							}  
+							$sql = "SELECT Species_Found_Name FROM Species_Found";
+							$result = $conn->query($sql);
+								 while($row = $result->fetch_assoc()) {  
+									 echo '<option>' . $row['Species_Found_Name'] . '</option>';
+							}
+						?>  
 					</select>
 					<input id="name" type="text" class="form-control" name="image name" placeholder="Image Name"/>
 					<input id="location" type="text" class="form-control" name="location" placeholder="Image Location"/>

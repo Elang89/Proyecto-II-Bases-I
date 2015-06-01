@@ -9,6 +9,7 @@
 	$imageFile = $json['imageData'][0]; 
 	$imageName = $json['imageData'][1];
 	$imageLocation = $json['imageData'][2];
+	$species = $json['imageData'][3];
 	
 	if ($dbconnection->connect_error) {
 		die("Connection failed: " . $dbconnection->connect_error);
@@ -16,14 +17,14 @@
 		return false;
 	}
 	
-	$sqlVariableImageInsertion = 'CALL image_insert_image(?,?,?,?);';
+	$sqlVariableImageInsertion = 'CALL image_insert_image(?,?,?,?,?);';
 	$stmt = $dbconnection->prepare($sqlVariableImageInsertion);
 	
 	if(!$stmt){
 		exit('0');
 	}
 	
-	$stmt->bind_param('isss',$userId,$imageName,$imageLocation,$imageFile);
+	$stmt->bind_param('issss',$userId,$species,$imageName,$imageLocation,$imageFile);
 	$stmt->execute();
 	if($stmt->error){
 		echo $stmt->error;

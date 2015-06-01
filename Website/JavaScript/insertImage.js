@@ -13,6 +13,8 @@ function sendImage(){
 	var imageLocation;
 	var image;
 	var species;
+	var selector;
+	var value;
 	var imageData = [];
 	var encodedImage;
 	var Json;
@@ -22,13 +24,18 @@ function sendImage(){
 	var serverResponse;
 	var reader = new FileReader();
 	
-	image = document.getElementById("image");
+	
+	image = document.getElementById("image").value;
 	imageFile = document.getElementById("image").value;
 	imageName = document.getElementById("name").value;
 	imageLocation = document.getElementById("location").value;
+	selector = document.getElementById("species");
+	species = selector.options[selector.selectedIndex].text;
+	value = selector.options[selector.selectedIndex].value;
 	
-	if(image == "" || imageName == "" || imageLocation == "" || !regex.test(image)){
-		alert("You must upload a .gif, .jpg or .png file and you must specify its name and the location, please do so before continuing");
+	if(image == "" || imageName == "" || imageLocation == "" || !regex.test(image) ||  value == -1){
+		alert("You must upload a .gif, .jpg or .png file and you must specify its name and the location, please do so before continuing." +
+				" Remember to select a valid species.");
 		clearInputs();
 		return false;
 	}
@@ -36,6 +43,7 @@ function sendImage(){
 	imageData[0] = imageFile;
 	imageData[1] = imageName;
 	imageData[2] = imageLocation;
+	imageData[3] = species;
 		
 	Json = JSON.stringify({imageData: imageData});
 		
