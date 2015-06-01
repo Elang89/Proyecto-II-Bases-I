@@ -84,5 +84,6 @@ BEGIN
     ||'%' and Family.Family_Name = COALESCE(p_Family_Name, Family.Family_Name)
     ||'%' and Sub_Order.Sub_Order_Name = COALESCE(p_Sub_Order_Name, Sub_Order.Sub_Order_Name)
     ||'%' and `Orders`.Order_Name = COALESCE(p_Order_Name, `Orders`.Order_Name)
-    ||'%' and Class.Class_Name = COALESCE(p_Class_Name, Class.Class_Name);
+    ||'%' and Class.Class_Name = COALESCE(p_Class_Name, Class.Class_Name)
+    ORDER BY Specie_Name;
 END
