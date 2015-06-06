@@ -13,7 +13,7 @@
       <div class="col-lg-3 col-sm-4 ">
         <div class="search-form"><h4><span class=glyphicon glyphicon-search"></span>Search for a specie</h4>
 	
-	<form enctype="multipart/form-data" action="javascript:searchPet();" method="POST" class="pet-search-form" id="pet-search-form">
+	<form enctype="multipart/form-data" action="javascript:searchSpecie();" method="POST" class="pet-search-form" id="pet-search-form">
 
 		<?php  
 		$conn = new mysqli('localhost','DBadmin','dbadmin','BirdDatabase');
@@ -25,7 +25,7 @@
 		}  
 					$sql = "SELECT Class_Name FROM Class";
 					$result = $conn->query($sql);
-						echo '<select name="Class" id = "Other" class="form-control">';
+						echo '<select name="Class" id = "Class" class="form-control" method = "POST">';
 						 echo '<option value = "-1">Select Class:</option>';
 						 
 						 while($row = $result->fetch_assoc()) {  
@@ -36,7 +36,7 @@
 					$sql = "SELECT Order_Name FROM Orders";
 					$result = $conn->query($sql);
 
-						 echo '<select name="Order" id = "Other" class="form-control">';
+						 echo '<select name="Order" id = "Order" class="form-control" method = "POST">';
 						 echo '<option value = "-1">Select Order:</option> ';
 						 
 						 while($row = $result->fetch_assoc()) {  
@@ -47,7 +47,7 @@
 					$sql = "SELECT Sub_Order_Name FROM Sub_Order";
 					$result = $conn->query($sql);
 
-						 echo '<select name="Sub_Order" id = "Other" class="form-control">';
+						 echo '<select name="Sub_Order" id = "Sub_Order" class="form-control" method = "POST">';
 						 echo '<option value = "-1">Select Sub_Order:</option>';
 						 
 						 while($row = $result->fetch_assoc()) {  
@@ -58,7 +58,7 @@
 					$sql = "SELECT Family_Name FROM Family";
 					$result = $conn->query($sql);
 
-						 echo '<select name="Family" id = "Other" class="form-control">';
+						 echo '<select name="Family" id = "Family" class="form-control" method = "POST">';
 						 echo '<option value = "-1">Select Family:</option>';
 						 
 						 while($row = $result->fetch_assoc()) {  
@@ -69,7 +69,7 @@
 					$sql = "SELECT Gender_Name FROM Gender";
 					$result = $conn->query($sql);
 
-						 echo '<select name="Gender" id = "Other" class="form-control">';
+						 echo '<select name="Gender" id = "Gender" class="form-control" method = "POST">';
 						 echo '<option value = "-1">Select Gender:</option>';
 						 
 						 while($row = $result->fetch_assoc()) {  
@@ -78,7 +78,7 @@
 						 echo '</select>';  
 		?> 
 		
-		<select name="specie_combo"   id = "specie_combo" class="form-control">
+		<select name="specie_combo"   id = "specie_combo" class="form-control" method = "POST">
 		<option value = "-1">Select Specie:</option> 
 		<?php  
 					$sql = "SELECT Specie_Name FROM Specie";
@@ -91,7 +91,7 @@
 		?>   
         </select>	 
 
-		<select name="size_combo"  id = "size_combo" class="form-control">
+		<select name="size_combo"  id = "size_combo" class="form-control" method = "POST">
 		<option value = "-1">Select Breed:</option> 
 		<?php  
 		
@@ -103,7 +103,7 @@
 		?>  
 		</select>  
 
-		<select name="Habitat_combo"  id = "Habitat_combo" class="form-control">
+		<select name="Habitat_combo"  id = "Habitat_combo" class="form-control" method = "POST">
 		<option value = "-1">Select Habitat:</option> 
 		<?php  
 		
@@ -115,7 +115,7 @@
 		?>   
 		</select>
 
-		<select name="Beak_combo" id = "Beak_combo" class="form-control">
+		<select name="Beak_combo" id = "Beak_combo" class="form-control" method = "POST">
 		<option value = "-1">Select Beak Type:</option> 
 		<?php  
 		
@@ -127,7 +127,7 @@
 		?> 
 		</select>		
 
-        <select name="Color_combo"  id = "Color_combo" class="form-control">
+        <select name="Color_combo"  id = "Color_combo" class="form-control" method = "POST">
 		<option value = "-1">Select Color:</option> 
 		<?php  
 		
@@ -139,7 +139,7 @@
 		?>   
 		</select>  
 
-		<select  name="offSpring_combo"  id = "offSpring_combo" class="form-control" >
+		<select  name="offSpring_combo"  id = "offSpring_combo" class="form-control" method = "POST">
 		<option value = "-1">Select Offspring Quantity:</option>
 		<?php  
 		
@@ -158,7 +158,7 @@
 
     </div> 
 
-    <div class="col-lg-9 col-sm-8" id = "petSearch">
+    <div class="col-lg-9 col-sm-8" id = "SpecieSearch">
 
 <!-- pets --> 
 				<?php
@@ -211,29 +211,42 @@
 <script type="text/javascript">  
     /*Function to update the  pets  according to the options chosen 
 	  AJAX function that calls pet_search_result.php */
-	function searchPet()
+	function searchSpecie()
 	{     
-		var Id1 = document.getElementById("pet_type_combo");  
-		var type = Id1.options[Id1.selectedIndex].value; 
 
-		var Id2 = document.getElementById('pet_breed_combo'); 
-		var breed = Id2.options[Id2.selectedIndex].value; 
+		var Id1 = document.getElementById("Class");  
+		var Class = Id1.options[Id1.selectedIndex].value; 
+
+		var Id2 = document.getElementById('Order'); 
+		var Order = Id2.options[Id2.selectedIndex].value; 
 		
-		var Id3= document.getElementById('pet_color'); 
-		var color = Id3.options[Id3.selectedIndex].value;   
+		var Id3= document.getElementById('Sub_Order'); 
+		var suborder = Id3.options[Id3.selectedIndex].value;   
 		
-		var Id4 = document.getElementById('pet_size'); 
-		var size = Id4.options[Id4.selectedIndex].value;  
+		var Id4 = document.getElementById('Family'); 
+		var family = Id4.options[Id4.selectedIndex].value;  
 		
-		var Id5 = document.getElementById('pet_trainning');
-		var trainning = Id5.options[Id5.selectedIndex].value;   
+		var Id5 = document.getElementById('Gender');
+		var gender = Id5.options[Id5.selectedIndex].value;   
 		
-		var Id6 = document.getElementById('pet_energy');
-		var energy = Id6.options[Id6.selectedIndex].value;   
+		var Id6 = document.getElementById('specie_combo');
+		var specie = Id6.options[Id6.selectedIndex].value;   
 		
-		var Id7 = document.getElementById('pet_space'); 
-		var space = Id7.options[Id7.selectedIndex].value;  
+		var Id7 = document.getElementById('size_combo'); 
+		var size = Id7.options[Id7.selectedIndex].value;   
 		
+		var Id8 = document.getElementById('Habitat_combo'); 
+		var habitat = Id8.options[Id8.selectedIndex].value;  
+		
+		var Id9 = document.getElementById('Beak_combo'); 
+		var beak = Id9.options[Id9.selectedIndex].value;  
+		
+		var Id10 = document.getElementById('Color_combo'); 
+		var color = Id10.options[Id10.selectedIndex].value;
+		
+		var Id11 = document.getElementById('offSpring_combo'); 
+		var offspring = Id11.options[Id11.selectedIndex].value;
+	
 		var xmlhttp;
 		if (window.XMLHttpRequest)
 		  {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -247,10 +260,10 @@
 		  {
 		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 			{
-			document.getElementById("petSearch").innerHTML=xmlhttp.responseText;
+			document.getElementById("SpecieSearch").innerHTML=xmlhttp.responseText;
 			}
 		  }
-		xmlhttp.open("GET","pet_search_result.php?type=" + type + "&breed=" + breed + "&color=" + color + "&size=" + size + "&trainning=" + trainning + "&energy=" + energy + "&space=" + space, true);
+		xmlhttp.open("GET","specie_search_results.php?Class=" + Class + "&Order=" + Order + "&suborder=" + suborder + "&family=" + family + "&gender=" + gender + "&specie=" + specie + "&size=" + size + "&habitat=" + habitat + "&beak=" + beak + "&color=" + color + "&offspring=" + offspring, true);
 		xmlhttp.send();
 	} 
 function updateBreed(){

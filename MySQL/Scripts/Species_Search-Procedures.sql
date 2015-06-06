@@ -12,7 +12,8 @@ BEGIN
         AND specie.Specie_Id = species_found.FK_Specie_Id 
         AND specie.FK_Size_Id = Size.Size_Id 
         AND specie.FK_Color_Id = Color.Color_Id 
-        AND specie.FK_Habitat_Id = habitat.Habitat_Id
+        AND specie.FK_Habitat_Id = habitat.Habitat_Id 
+        AND specie.FK_Beak_Type_Id = beak_type.Beak_Type_Id
         AND specie.FK_Offspring_Quantity_Id = offspring_quantity.Offspring_Quantity_Id  
         AND specie.FK_Gender_Id = Gender.Gender_Id  
         AND Gender.FK_Family_Id = Family.Family_Id 
@@ -29,7 +30,8 @@ BEGIN
         WHERE specie.Specie_Id = species_found.FK_Specie_Id 
         AND specie.FK_Size_Id = Size.Size_Id 
         AND specie.FK_Color_Id = Color.Color_Id 
-        AND specie.FK_Habitat_Id = habitat.Habitat_Id
+        AND specie.FK_Habitat_Id = habitat.Habitat_Id 
+        AND specie.FK_Beak_Type_Id = beak_type.Beak_Type_Id
         AND specie.FK_Offspring_Quantity_Id = offspring_quantity.Offspring_Quantity_Id  
         AND specie.FK_Beak_Type_ID = Beak_Type_Id
         AND specie.FK_Gender_Id = Gender.Gender_Id
