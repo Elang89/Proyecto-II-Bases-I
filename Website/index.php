@@ -12,7 +12,7 @@
           <h2>BirdLovers International</h2>
           <blockquote>
             <p class="location"></span> San Jos&#233;, Costa Rica</p>
-            <p>PetLovers International is a non-profit organization that manages various services involved in the care of birds in need.</p>
+            <p>Bird Lovers International is a non-profit organization that's involved in the search of bird species all over the world.</p>
           </blockquote>
         </div>
       </div>
@@ -49,7 +49,7 @@
       <div class="row">
         <div class="col-lg-6 col-sm-9 recent-view">
           <h3>About Us</h3>
-          <p>PetLovers is an organization that deals with the care of animals in need with a special focus on dogs. Specifically, our organization deals with abandoned animals. Through our services we provide a method of registration and adoption for any and all who might wish to participate.<br><a href="about.php">Learn More</a></p>
+          <p>BirdLovers is an organization that deals the search of species all over the world. Which is why this website allows bird fans to post and share picture of birds they have taken. <br><a href="about.php">Learn More</a></p>
           
         </div>
         <!-- Carousel can be used in my pets view -->
