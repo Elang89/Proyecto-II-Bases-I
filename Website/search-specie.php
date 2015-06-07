@@ -92,7 +92,7 @@
         </select>	 
 
 		<select name="size_combo"  id = "size_combo" class="form-control" method = "POST">
-		<option value = "-1">Select Breed:</option> 
+		<option value = "-1">Select Size:</option> 
 		<?php  
 		
 				$sql = "SELECT Size_Name FROM Size";
@@ -215,7 +215,7 @@
 	{     
 
 		var Id1 = document.getElementById("Class");  
-		var Class = Id1.options[Id1.selectedIndex].value; 
+		var Class = Id1.options[Id1.selectedIndex].value;  
 
 		var Id2 = document.getElementById('Order'); 
 		var Order = Id2.options[Id2.selectedIndex].value; 

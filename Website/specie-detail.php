@@ -2,8 +2,8 @@
 <!-- banner -->
 <div class="inside-banner">
   <div class="container">
-    <span class="pull-right"><a href="userIndex.php">Home</a> / Pet Profile</span>
-    <h2>Pet Profile</h2>
+    <span class="pull-right"><a href="userIndex.php">Home</a> / Specie Profile</span>
+    <h2>Specie Profile</h2>
   </div>
 </div>
 
