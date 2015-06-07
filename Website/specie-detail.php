@@ -2,8 +2,8 @@
 <!-- banner -->
 <div class="inside-banner">
   <div class="container">
-    <span class="pull-right"><a href="userIndex.php">Home</a> / Specie Profile</span>
-    <h2>Specie Profile</h2>
+    <span class="pull-right"><a href="userIndex.php">Home</a> / Pet Profile</span>
+    <h2>Pet Profile</h2>
   </div>
 </div>
 
@@ -100,13 +100,6 @@
               </div>
               <!-- #Slider Ends -->
             </div>
-			<div class="spacer"><h4><span class="glyphicon glyphicon-star"></span><?php echo $petName?></h4>
-				<div class="col-lg-6 col-sm-6">
-					<legend>Profile Picture</legend>
-					<img src="<?php echo $path ?>" class="img-responsive img-circle" alt="properties"/>
-				</div>
-					<input id="username" type="text" class="form-control" name="form_name" maxlength="20" readonly value="<?php echo $petName?>">
-			</div>
 			<div class="col-lg-6 col-sm-6">
 				<div class="spacer"><h4><span class="glyphicon glyphicon-asterisk"></span>More Information</h4> 
 					<h5>Type of Species</h5>

@@ -92,7 +92,7 @@
         </select>	 
 
 		<select name="size_combo"  id = "size_combo" class="form-control" method = "POST">
-		<option value = "-1">Select Size:</option> 
+		<option value = "-1">Select Breed:</option> 
 		<?php  
 		
 				$sql = "SELECT Size_Name FROM Size";
@@ -161,7 +161,7 @@
     <div class="col-lg-9 col-sm-8" id = "SpecieSearch">
 
 <!-- pets --> 
-				<?php
+<?php
 			
 	$finalResult = '';	
 	$sqlVariableGetAllSpecies = 'CALL find_all_species()'; 
@@ -180,6 +180,7 @@
 														<h4>'.$row['Specie_Name'].' </h4>
 														<h5>'.$row['Size_Name'].'</h5>
 														<h5>'.$row['Habitat_Name'].'</h5> 
+														<div class="image-holder"><img src="'.$row['Image'].'"class="img-responsive" alt="properties"/></div>
 														<input class="form-control" type="text" style="display: none" readonly name="specie_name" value="'.$row['Specie_Name'].'"/> 
 														<input class="form-control" type="text" style="display: none" readonly name="size_name" value="'.$row['Size_Name'].'"/> 
 														<input class="form-control" type="text" style="display: none" readonly name="Habitat_name" value="'.$row['Habitat_Name'].'"/>
@@ -215,7 +216,7 @@
 	{     
 
 		var Id1 = document.getElementById("Class");  
-		var Class = Id1.options[Id1.selectedIndex].value;  
+		var Class = Id1.options[Id1.selectedIndex].value; 
 
 		var Id2 = document.getElementById('Order'); 
 		var Order = Id2.options[Id2.selectedIndex].value; 

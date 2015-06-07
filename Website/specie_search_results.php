@@ -36,6 +36,7 @@
 														<h4>'.$row['Specie_Name'].' </h4>
 														<h5>'.$row['Size_Name'].'</h5>
 														<h5>'.$row['Habitat_Name'].'</h5> 
+														<div class="image-holder"><img src="'.$row['Image'].'"class="img-responsive" alt="properties"/></div>
 														<input class="form-control" type="text" style="display: none" readonly name="specie_name" value="'.$row['Specie_Name'].'"/> 
 														<input class="form-control" type="text" style="display: none" readonly name="size_name" value="'.$row['Size_Name'].'"/> 
 														<input class="form-control" type="text" style="display: none" readonly name="Habitat_name" value="'.$row['Habitat_Name'].'"/>
