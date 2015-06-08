@@ -105,9 +105,6 @@
 					<input id="user_email" type="text" class="form-control" name="form_email" maxlength="30" readonly value="<?php echo $primaryEmail;?>">
 				</div>
 			</div>
-			<div class="col-lg-6 col-sm-6">
-					<button id="view gallery" type="button" class="btn btn-primary" onclick="window.location.href='gallery.php'">View Gallery</button>
-				</div>
 		 </div>
 			
 		 </div>
