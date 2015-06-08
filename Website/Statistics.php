@@ -149,7 +149,7 @@
 		 echo '<h2> Top five users with the most registered photos: </h2>';
 		 while ($row = $result->fetch_assoc()){ 
 				$finalResult = $finalResult.'
-				<h4>'.$row['username']. " " .$row['quantity']. '</h4>';
+				<h4>'.$row['username']. " " .$row['`registered_birds_by_user`(user_id)']. '</h4>';
 			}
 			echo $finalResult;
 			$conn->close(); 
