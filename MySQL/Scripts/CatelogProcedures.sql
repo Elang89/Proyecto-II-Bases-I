@@ -290,16 +290,24 @@ CREATE DEFINER=`DBadmin`@`localhost` FUNCTION `insert_found_specie`(
 ) RETURNS int(11)
 BEGIN
 	DECLARE d_specie_id INT; 
+    DECLARE count INT;
 
 	SELECT Specie_Id INTO d_specie_id 
 	FROM specie 
 	WHERE p_Specie = specie.Specie_Name;  
 
-
-	INSERT INTO species_found(FK_User_Id, FK_Specie_Id, Description, Register_Date)
-    VALUES (p_user, d_specie_id, p_description, CURRENT_DATE);
+	SELECT COUNT(*) INTO count 
+    FROM species_found
+    WHERE species_found_name = p_specie;
     
-    RETURN 1; 
+    
+	IF count = 0 THEN
+		INSERT INTO species_found(FK_User_Id, FK_Specie_Id, Description, Species_Found_Name, Register_Date)
+		VALUES (p_user, d_specie_id, p_description, p_specie, CURRENT_DATE);
+		RETURN 1;
+	ELSE
+		RETURN 0;
+	END IF;
 END
 
 ----------------------------Edits---------------------------------------
