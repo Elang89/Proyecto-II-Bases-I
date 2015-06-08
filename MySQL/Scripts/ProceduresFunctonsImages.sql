@@ -1,12 +1,17 @@
 CREATE DEFINER=`DBadmin`@`localhost` PROCEDURE `image_insert_image`(p_user_id INT,
-     p_species_id INT,
+     p_species_name VARCHAR(45),
 	 p_image_name VARCHAR(45),
      p_image_location VARCHAR(45),
-     p_image LONGBLOB
+     p_image VARCHAR(200)
 	)
 BEGIN
-	INSERT INTO image(User_Id, Species_Id, Image_Name, Image_Location, Image) 
-    VALUES(p_user_id, p_species_id, p_image_name, p_image_location, p_image);
+	DECLARE v_species_id INT; 
+	SELECT species_id INTO v_species_id
+        FROM species_found 
+        WHERE p_species_name = species_found_name;
+        
+		INSERT INTO image(User_Id, Species_Id, Image_Name, Image_Location, Image) 
+		VALUES(p_user_id, v_species_id, p_image_name, p_image_location, p_image); 
 END
 
 /*------------------------------------------------------------------------------------*/
