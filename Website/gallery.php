@@ -4,7 +4,7 @@
 <div class="inside-banner">
   <div class="container">
     <span class="pull-right"><a href="index.php">Home</a> / User Gallery</span>
-    <h2>Find A User</h2>
+    <h2>Gallery</h2>
   </div>
 </div>
 <!-- banner -->

@@ -58,7 +58,8 @@
         <ul class="pull-right">
           <!-- Public buttons -->
 			  <li><button id="search_users" style="display:none" class="btn btn-info" onclick="window.location.href='search_users.php'">Find A User</button></li>
-			  <li><button id="search_stuff" style="display:none" class="btn btn-info" onclick="window.location.href='search-specie.php'">Find A Species</button></li> 
+			  <li><button id="search_stuff" style="display:none" class="btn btn-info" onclick="window.location.href='search-specie.php'">Find A Species</button></li>  
+			  <li><button id="search_gallery" style="display:none" class="btn btn-info" onclick="window.location.href='gallery_species.php'">Search Gallery</button></li>
               <li><button id="stats" style="display:none" class="btn btn-info" onclick="window.location.href='Statistics.php'"> Statistics</button></li>
               <li><button id="my_account" style="display:none" class="btn btn-info" onclick="window.location.href='myAccount.php'">My account</button></li>
               <li><button id="catalog" style="display:none" class="btn btn-info" onclick="window.location.href='manage-catalog.php'">Manage Catalogs</button></li>

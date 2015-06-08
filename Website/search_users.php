@@ -12,7 +12,7 @@
   <div class="properties-listing spacer">
     <div class="row">
       <div class="col-lg-3 col-sm-4 ">
-        <div class="search-form"><h4><span class=glyphicon glyphicon-search"></span>Search for a pet</h4>
+        <div class="search-form"><h4><span class=glyphicon glyphicon-search"></span>Search for a user</h4>
 			<input id="search-parameter" type="text" class="form-control" placeholder="Find Username" required maxlength="45"/>
 	        <button id="find-users" class="btn btn-primary">Find Now</button>
       	</div> 
