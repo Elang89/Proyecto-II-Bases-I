@@ -58,7 +58,7 @@
 	$stmt = $conn->prepare($sqlVariableGetAllSpecies);
 
 	
-	$stmt->execute();
+	 $stmt->execute();
 	 $result = $stmt->get_result(); 
 	 if($result->num_rows == null){
 	 	$finalResult = "<h2>No results found<h2>";	
