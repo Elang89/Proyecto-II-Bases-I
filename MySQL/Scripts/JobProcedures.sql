@@ -1,5 +1,5 @@
 SET GLOBAL event_scheduler = ON; /* correr en SYS */
-
+/*-------------------------------------------------------------------------*/
 CREATE DEFINER=`DBadmin`@`localhost` PROCEDURE `Insert_Daily_Registrations`()
 BEGIN
 	DECLARE done INT DEFAULT 0;
@@ -32,7 +32,7 @@ BEGIN
     CLOSE c_daily_registrations;
 END
 
-
+/*---------------------------------------------------*/
 CREATE EVENT daily_registrations 
 	ON SCHEDULE
 		EVERY 1 DAY
@@ -40,3 +40,13 @@ CREATE EVENT daily_registrations
 		ON COMPLETION PRESERVE ENABLE  
     DO 
 		CALL birddatabase.Insert_Daily_Registrations(); 
+		
+/*---------------------------------------------------------------*/
+
+CREATE DEFINER=`DBadmin`@`localhost` PROCEDURE `display_daily_registrations`()
+BEGIN
+	SELECT Species_Name, Registration_Date 
+		FROM Registrations 
+		WHERE DATE(Registration_Date) = CURDATE();
+
+END
