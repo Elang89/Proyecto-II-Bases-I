@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+	session_start();
+	
+	if(isset($_SESSION['username'])){
+		$username = $_SESSION['username'];
+		$id = $_SESSION['id'];
+		$firstName = $_SESSION['first_name'];
+		$lastName = $_SESSION['last_name'];;
+		$expert = $_SESSION['expert'];
+		$primaryEmail = $_SESSION['email'];
+	}
+?>
   <head>
     <title>Birds</title>
     <meta charset="UTF-8" />

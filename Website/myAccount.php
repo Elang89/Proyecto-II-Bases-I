@@ -1,21 +1,12 @@
 <?php include'header.php';?>
-<?php 
-	session_start();
-	$username = $_SESSION['username'];
-	$id = $_SESSION['id'];
-	$firstName = $_SESSION['first_name'];
-	$lastName = $_SESSION['last_name'];;
-	$expert = $_SESSION['expert'];
-	$primaryEmail = $_SESSION['email'];
-?>
 <!-- banner -->
+
 <div class="inside-banner">
   <div class="container">
     <span class="pull-right"><a href="userIndex.php">Home</a> / User Profile</span>
     <h2>User Profile</h2>
   </div>
 </div>
-
 <!-- banner -->
 <script src="JavaScript/insertImage.js"></script>
 <div class="container">

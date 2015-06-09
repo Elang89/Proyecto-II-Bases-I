@@ -31,11 +31,13 @@ BEGIN
 		SELECT Image.User_Id, Image, Image_Name, Image_Location, Species_Found_Name, username
 		FROM Image, species_found, user_table
 			WHERE User_Table.User_Id = Image.User_Id
+            AND Image.Species_Id = Species_Found.Species_Id
             AND Image_Name != 'First_Image';
     ELSE 
 		SELECT Image.User_Id, Image, Image_Name, Image_Location, Species_Found_Name, username
 		FROM Image, species_found, user_table
 			WHERE p_specie = Species_Found_Name 
+            AND Image.Species_Id = Species_Found.Species_Id
 			AND Image_Name != 'First_Image'
 			AND image.User_Id = user_table.User_Id;
 	END IF;
